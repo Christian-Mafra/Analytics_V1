@@ -13,14 +13,12 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.analytics.R;
-import com.example.analytics.fragments.CadastroFragment;
 import com.example.analytics.fragments.LoginFragment;
 import com.example.analytics.fragments.LoginOuCadastroFragment;
 import com.example.analytics.fragments.QuemSomosFragment;
 
 public class FragmentsActivity extends AppCompatActivity {
     private LoginFragment loginFragment;
-    private CadastroFragment cadastroFragment;
     private LoginOuCadastroFragment loginOuCadastroFragment;
     private QuemSomosFragment quemSomosFragment;
 
@@ -58,13 +56,13 @@ public class FragmentsActivity extends AppCompatActivity {
             transaction.replace(R.id.frameConteudo2, loginOuCadastroFragment);
             transaction.commit();
         }
-        cadastroFragment = new CadastroFragment();
+        /*
         if(numero == 2) {
             getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(), R.color.gray));
             getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.transparente));
-            transaction.replace(R.id.frameConteudo2, cadastroFragment);
+            transaction.replace(R.id.frameConteudo2, );
             transaction.commit();
-        }
+        }*/
         loginFragment = new LoginFragment();
         if(numero == 3) {
             getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(), R.color.gray));
@@ -74,7 +72,7 @@ public class FragmentsActivity extends AppCompatActivity {
         }
         quemSomosFragment = new QuemSomosFragment();
         if(numero == 7) {
-            getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
+            getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(), R.color.gray));
             getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.transparente));
             transaction.replace(R.id.frameConteudo2, quemSomosFragment);
             transaction.commit();

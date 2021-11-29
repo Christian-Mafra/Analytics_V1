@@ -50,8 +50,7 @@ public class MainActivity extends AppCompatActivity {
         buttonCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), FragmentsActivity.class);
-                intent.putExtra("fragments",2);
+                Intent intent = new Intent(getApplicationContext(), CadastroActivity.class);
                 startActivity(intent);
             }
         });

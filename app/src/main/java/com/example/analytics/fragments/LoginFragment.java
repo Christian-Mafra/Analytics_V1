@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.analytics.R;
+import com.example.analytics.activitys.CadastroActivity;
 import com.example.analytics.activitys.PrincipalActivity;
 import com.example.analytics.activitys.FragmentsActivity;
 import com.example.analytics.activitys.TestActivity;
@@ -29,8 +30,6 @@ public class LoginFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-
-
         buttonEntrar = view.findViewById(R.id.buttonEntrar);
         buttonCadastrar = view.findViewById(R.id.buttonCadastrar);
 
@@ -46,8 +45,7 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 getActivity().finish();
-                Intent intent = new Intent(getContext(), FragmentsActivity.class);
-                intent.putExtra("fragments",2);
+                Intent intent = new Intent(getContext(), CadastroActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,11 +1,19 @@
 package com.example.analytics.model;
 
 public class CadastroModel {
-    private String email, senha;
+    private String nome;
+    private String email;
+    private String senha;
 
-    public CadastroModel(String email, String senha) {
-        this.email = email;
-        this.senha = senha;
+    public CadastroModel() {
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {

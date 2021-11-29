@@ -1,5 +1,6 @@
 package com.example.analytics.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -15,6 +16,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import com.example.analytics.R;
+import com.example.analytics.activitys.FragmentsActivity;
+import com.example.analytics.activitys.PrincipalActivity;
 import com.example.analytics.activitys.VisualizacaoActivity;
 import com.example.analytics.adapter.AdapterCartazHorizontal;
 import com.example.analytics.adapter.AdapterCartazVertical;
@@ -31,7 +34,7 @@ public class ViewPagerConteudoFragment extends Fragment {
     private FloatingActionButton fabMais, fabConteudo, fabShortBook, fabDonwload;
     private Animation fabOpen, fabCloser, rotateFarward,rotateBackward;
     private RecyclerView recyclerNovidades, recyclerRecomendacao, recyclerContinue, recyclerCloretos;
-    private  List<CartazVerticalModel> listacartazVerticalModels = new ArrayList<>();
+    private List<CartazVerticalModel> listacartazVerticalModels = new ArrayList<>();
     private List<CartazHorizontalModel> listcartazHorizontalModels = new ArrayList<>();
     private List<ContinueEstudandoModel> continueEstudando = new ArrayList<>();
 
@@ -71,12 +74,14 @@ public class ViewPagerConteudoFragment extends Fragment {
         });*/
 
         recyclerNovidades = view.findViewById(R.id.recyclerNovidades);
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false);
         recyclerNovidades.setLayoutManager(layoutManager);
-        // recyclerNovidades.setHasFixedSize(true);
+        recyclerNovidades.setHasFixedSize(true);
         //Config Adapter
+        listacartazVerticalModels.clear();
         preparaCartazVertical();
-        AdapterCartazVertical adapterCartazVertical = new AdapterCartazVertical(listacartazVerticalModels);
+        AdapterCartazVertical adapterCartazVertical = new AdapterCartazVertical(listacartazVerticalModels,getContext());
         recyclerNovidades.setAdapter(adapterCartazVertical);
 
 
@@ -103,32 +108,31 @@ public class ViewPagerConteudoFragment extends Fragment {
     }
 
     //---------------------------------------------------------------------------------------------------------------------------------//
-
-    /* void setOnClickListner() {
-        listner = new AdapterNovidades.RecyclerViewClickListner() {
+    /*Context context;
+    private void setOnClickListner() {
+        listner = new AdapterCartazVertical.RecyclerViewClickListner() {
             @Override
             public void onClick(View v, int position) {
                 Intent intent = new Intent(getContext(), VisualizacaoActivity.class);
-                //intent.putExtra("fragments",6);
-                startActivity(intent);
+                context.startActivity(intent);
             }
         };
-    };
-*/
+    }*/
+
     public void preparaCartazVertical(){
-        CartazVerticalModel g = new CartazVerticalModel(R.drawable.girl);
+        CartazVerticalModel g = new CartazVerticalModel(R.drawable.roteirodepratica,"Cloretos Insolúveis: Roteiro de prática");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.flasks);
+        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacidoroteiro, "Sulfetos Insoluveis em Meio Acido: Roteiro de Prática");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.fluxograma);
+        g = new CartazVerticalModel(R.drawable.flasks,"Produção de sabão");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.calcularsolubilidade);
+        g = new CartazVerticalModel(R.drawable.calcularsolubilidade,"Nomes que não sei");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.glowing);
+        g = new CartazVerticalModel(R.drawable.glowing,"mdwojcfvnwedjcnwjcw");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacido);
+        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacido,"AAAAAAAAAAAAAAAAAAA");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.cationsg1);
+        g = new CartazVerticalModel(R.drawable.cationsg1,"bbbbbbbbbbbbbbBBBBBBBBBB");
         this.listacartazVerticalModels.add(g);
     }
 

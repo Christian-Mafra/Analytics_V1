@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import com.example.analytics.R;
 import com.example.analytics.adapter.AdapterQuemSomos;
 import com.example.analytics.model.QuemSomosModel;
-import com.google.firebase.database.collection.LLRBNode;
 
 import java.util.ArrayList;
 import java.util.List;

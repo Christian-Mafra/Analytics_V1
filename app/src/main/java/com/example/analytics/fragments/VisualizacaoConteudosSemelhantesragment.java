@@ -40,7 +40,6 @@ public class VisualizacaoConteudosSemelhantesragment extends Fragment {
         AdapterVisualizacaoConteudo adapterVisualizacaoConteudo = new AdapterVisualizacaoConteudo(visualizacaoConteudoModelList);
         recyclerViewVisualizacaoConteudo.setAdapter(adapterVisualizacaoConteudo);
 
-
         return view;
     }
 

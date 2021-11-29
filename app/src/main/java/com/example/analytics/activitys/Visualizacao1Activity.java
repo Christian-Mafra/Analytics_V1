@@ -1,39 +1,41 @@
 package com.example.analytics.activitys;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.ViewPager;
+
 import android.app.Activity;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.ImageView;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.viewpager.widget.ViewPager;
+import android.widget.TextView;
 
 import com.example.analytics.R;
-import com.example.analytics.fragments.VisualizacaoConteudosSemelhantesragment;
-import com.example.analytics.fragments.VisualizacaoDetalhesFragment;
+import com.example.analytics.fragments.VisuConteudoFragment;
+import com.example.analytics.fragments.VisuDetalhesFragment;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
-public class VisualizacaoActivity extends AppCompatActivity {
+public class Visualizacao1Activity extends AppCompatActivity {
     private ImageView img;
+    private TextView txtNomeConteudo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_visualizacao);
+        setContentView(R.layout.activity_visualizacao1);
 
-        img = findViewById(R.id.imageView6);
-
+        img = findViewById(R.id.imgVisualizacao);
+        txtNomeConteudo = findViewById(R.id.txtNomeConteudo);
 
         if(Build.VERSION.SDK_INT>=19 && Build.VERSION.SDK_INT<2){
-            setWindowsFlag(this,WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
+            setWindowsFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
         }
         if(Build.VERSION.SDK_INT>=19){
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
@@ -45,18 +47,24 @@ public class VisualizacaoActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.transparente));
         getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(),R.color.cor_tema_escuro));
 
+        //Recebendo imagem
+        img.setImageResource(getIntent().getIntExtra("img",0));
+        txtNomeConteudo.setText(getIntent().getStringExtra("txt"));
+
+        //SmartTabLayout
 
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Conteúdos semelhantes", VisualizacaoConteudosSemelhantesragment.class)
-                .add("Detalhes", VisualizacaoDetalhesFragment.class)
+                .add("Conteúdos semelhantes", VisuConteudoFragment.class)
+                .add("Detalhes", VisuDetalhesFragment.class)
                 .create());
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPagerVisualizacao);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(adapter);
 
-        SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.viewPagerTab);
+        SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.viewpagertab);
         viewPagerTab.setViewPager(viewPager);
+
 
     }
     private static void setWindowsFlag(Activity activity, final int Bits, Boolean on) {
@@ -69,4 +77,5 @@ public class VisualizacaoActivity extends AppCompatActivity {
         }
         win.setAttributes(winParms);
     }
+
 }

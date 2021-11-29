@@ -20,7 +20,7 @@
     <Button
         android:id="@+id/buttonEntrar"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
@@ -35,8 +35,8 @@
     <Button
         android:id="@+id/buttonCadastrar"
         android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/white"
         android:text="Cadastrar"
         android:textColor="@color/cor_tema"
@@ -61,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="75dp"
         android:fontFamily="@font/copse"
         android:text="Bem Vindo"
         android:textColor="@color/white"
