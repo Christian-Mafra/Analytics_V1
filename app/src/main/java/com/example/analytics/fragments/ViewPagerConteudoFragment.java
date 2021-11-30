@@ -120,19 +120,13 @@ public class ViewPagerConteudoFragment extends Fragment {
     }*/
 
     public void preparaCartazVertical(){
-        CartazVerticalModel g = new CartazVerticalModel(R.drawable.roteirodepratica,"Cloretos Insolúveis: Roteiro de prática");
+        CartazVerticalModel g = new CartazVerticalModel(R.drawable.cloretosinsoluveisroteiro,"Cloretos Insolúveis");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacidoroteiro, "Sulfetos Insoluveis em Meio Acido: Roteiro de Prática");
+        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacidoroteiro, "Sulfetos Insoluveis em Meio Acido");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.flasks,"Produção de sabão");
+        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeiobasicoroteiro,"Sulfetos Insoluveis em Meio Básico");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.calcularsolubilidade,"Nomes que não sei");
-        this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.glowing,"mdwojcfvnwedjcnwjcw");
-        this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacido,"AAAAAAAAAAAAAAAAAAA");
-        this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.cationsg1,"bbbbbbbbbbbbbbBBBBBBBBBB");
+        g = new CartazVerticalModel(R.drawable.carbonatosinsoluveisroteiro,"Carbonatos Insoluveis");
         this.listacartazVerticalModels.add(g);
     }
 
