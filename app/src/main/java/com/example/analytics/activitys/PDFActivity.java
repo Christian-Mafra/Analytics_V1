@@ -1,39 +1,29 @@
 package com.example.analytics.activitys;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.app.Activity;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.viewpager.widget.ViewPager;
 
 import com.example.analytics.R;
-import com.example.analytics.fragments.VisualizacaoConteudosSemelhantesragment;
-import com.example.analytics.fragments.VisualizacaoDetalhesFragment;
-import com.ogaclejapan.smarttablayout.SmartTabLayout;
-import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
-import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
+import com.github.barteksc.pdfviewer.PDFView;
 
-public class VisualizacaoActivity extends AppCompatActivity {
-    private ImageView img;
+public class PDFActivity extends AppCompatActivity {
+    PDFView pdfView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_visualizacao);
-
-        img = findViewById(R.id.imageView6);
-
+        setContentView(R.layout.activity_pdfactivity);
 
         if(Build.VERSION.SDK_INT>=19 && Build.VERSION.SDK_INT<2){
-            setWindowsFlag(this,WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
+            setWindowsFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
         }
         if(Build.VERSION.SDK_INT>=19){
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
@@ -46,17 +36,8 @@ public class VisualizacaoActivity extends AppCompatActivity {
         getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(),R.color.cor_tema_escuro));
 
 
-        FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
-                getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Conteúdos semelhantes", VisualizacaoConteudosSemelhantesragment.class)
-                .add("Detalhes", VisualizacaoDetalhesFragment.class)
-                .create());
-
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPagerVisualizacao);
-        viewPager.setAdapter(adapter);
-
-        SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.viewPagerTab);
-        viewPagerTab.setViewPager(viewPager);
+        pdfView = (PDFView) findViewById(R.id.pdfView);
+        pdfView.fromAsset("pdfcloretosinsoluveis.pdf").load();
 
     }
     private static void setWindowsFlag(Activity activity, final int Bits, Boolean on) {
@@ -69,4 +50,6 @@ public class VisualizacaoActivity extends AppCompatActivity {
         }
         win.setAttributes(winParms);
     }
+
+
 }

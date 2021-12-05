@@ -24,12 +24,17 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
 public class CadastroActivity extends AppCompatActivity {
     private Button btnJatenhoConta, btnCadastrar;
     private EditText txtNome, txtEmail, txtSenha, txtConfirmeSenha;
     String[] mensagens = {"Informe todos os campos","Confirme sua senha"};
+    private FirebaseAuth autenticacao;
+    private CadastroModel novoCadastro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +66,6 @@ public class CadastroActivity extends AppCompatActivity {
             }
         });
 
-
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,17 +73,33 @@ public class CadastroActivity extends AppCompatActivity {
                 String email = txtEmail.getText().toString();
                 String senha = txtSenha.getText().toString();
                 String confirmeSenha = txtConfirmeSenha.getText().toString();
-                if(nome.isEmpty()||email.isEmpty()||senha.isEmpty()||confirmeSenha.isEmpty()){
-                    Snackbar snackbar = Snackbar.make(v,mensagens[0],Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
+
+                if(!nome.isEmpty()){
+                    if(!email.isEmpty()){
+                        if(!senha.isEmpty()){
+                            if(!confirmeSenha.isEmpty()){
+                                if(senha.equals(confirmeSenha)){
+                                    novoCadastro = new CadastroModel(nome,email,senha);
+                                    cadastrarUsuario();
+                                }else{
+                                    Toast.makeText(getApplicationContext(), "Senhas incompatíveis", Toast.LENGTH_SHORT).show();
+                                }
+                            }else{
+                                Toast.makeText(getApplicationContext(), "Confirme sua senha", Toast.LENGTH_SHORT).show();
+                            }
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Informe uma senha", Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Informe seu email", Toast.LENGTH_SHORT).show();
+                    }
                 }else{
-                    cadastrarUsuario(v);
+                    Toast.makeText(getApplicationContext(), "Informe seu nome", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
+
     public void inicializacao(){
         btnJatenhoConta = findViewById(R.id.btnJatenhoConta);
         txtNome = findViewById(R.id.txtNome);
@@ -89,19 +109,29 @@ public class CadastroActivity extends AppCompatActivity {
         txtConfirmeSenha = findViewById(R.id.txtConfirmeSenha);
     }
 
-    public void cadastrarUsuario(View v){
-        String email = txtEmail.getText().toString();
-        String senha = txtSenha.getText().toString();
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+    public void cadastrarUsuario(){
+        autenticacao = ConfiguracaoFirebase.getFirebaseAutentificacao();
+        autenticacao.createUserWithEmailAndPassword(novoCadastro.getEmail(),novoCadastro.getSenha())
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Snackbar snackbar = Snackbar.make(v, mensagens[0], Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Falha no cadastrar!", Toast.LENGTH_SHORT).show();
+                if(task.isSuccessful()){
+                    Toast.makeText(getApplicationContext(), "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+                }else{
+                    String excecao = "";
+                    try{
+                        throw task.getException();
+                    }catch (FirebaseAuthWeakPasswordException e){
+                        excecao = "Digite uma senha mais forte";
+                    }catch (FirebaseAuthInvalidCredentialsException e){
+                        excecao = "Digite um email válido";
+                    }catch (FirebaseAuthUserCollisionException e){
+                        excecao = "Esta conta já foi cadastrada";
+                    } catch (Exception e) {
+                        e.getMessage();
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(getApplicationContext(), excecao, Toast.LENGTH_SHORT).show();
                 }
             }
         });

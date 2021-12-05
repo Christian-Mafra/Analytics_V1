@@ -1,7 +1,5 @@
 package com.example.analytics.fragments;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,12 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
 import com.example.analytics.R;
-import com.example.analytics.activitys.FragmentsActivity;
-import com.example.analytics.activitys.PrincipalActivity;
-import com.example.analytics.activitys.VisualizacaoActivity;
 import com.example.analytics.adapter.AdapterCartazHorizontal;
 import com.example.analytics.adapter.AdapterCartazVertical;
 import com.example.analytics.adapter.AdapterContinueEstudando;
@@ -122,11 +116,13 @@ public class ViewPagerConteudoFragment extends Fragment {
     public void preparaCartazVertical(){
         CartazVerticalModel g = new CartazVerticalModel(R.drawable.cloretosinsoluveisroteiro,"Cloretos Insolúveis");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacidoroteiro, "Sulfetos Insoluveis em Meio Acido");
+        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacidoroteiro, "Sulfetos Insolúveis em Meio Ácido");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeiobasicoroteiro,"Sulfetos Insoluveis em Meio Básico");
+        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeiobasicoroteiro,"Sulfetos Insolúveis em Meio Básico");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.carbonatosinsoluveisroteiro,"Carbonatos Insoluveis");
+        g = new CartazVerticalModel(R.drawable.carbonatosinsoluveisroteiro,"Carbonatos Insolúveis");
+        this.listacartazVerticalModels.add(g);
+        g = new CartazVerticalModel(R.drawable.cationssoluveisroteiro,"Cátions Solúveis");
         this.listacartazVerticalModels.add(g);
     }
 

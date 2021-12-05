@@ -6,9 +6,6 @@ public class CartazVerticalModel {
     private int imageViewCartazVertical;
     private String nomeCartazVertical;
 
-    public CartazVerticalModel() {
-    }
-
     public CartazVerticalModel(int imageViewCartazVertical, String nomeCartazVertical) {
         this.imageViewCartazVertical = imageViewCartazVertical;
         this.nomeCartazVertical = nomeCartazVertical;

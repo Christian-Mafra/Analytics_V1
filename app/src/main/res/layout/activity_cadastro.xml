@@ -98,7 +98,10 @@
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
             android:background="@android:color/transparent"
-            android:hint="Nome e sobrenome" />
+            android:hint="Nome e sobrenome"
+            android:textColor="@color/cor_tema"
+            android:textColorHighlight="@color/cor_tema"
+            android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -117,7 +120,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:hint="Email" />
+            android:hint="Email"
+            android:textColor="@color/cor_tema"
+            android:textColorHighlight="@color/cor_tema"
+            android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -137,7 +143,10 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:hint="Senha"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/cor_tema"
+            android:textColorHighlight="@color/cor_tema"
+            android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -159,7 +168,10 @@
             android:layout_marginBottom="16dp"
             android:background="@android:color/transparent"
             android:hint="Confirme sua senha"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/cor_tema"
+            android:textColorHighlight="@color/cor_tema"
+            android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

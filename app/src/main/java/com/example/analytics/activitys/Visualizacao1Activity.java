@@ -5,13 +5,14 @@ import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.EditText;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 public class Visualizacao1Activity extends AppCompatActivity {
     private ImageView img;
     private TextView txtNomeConteudo;
+    private Button btnVamosLa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,7 @@ public class Visualizacao1Activity extends AppCompatActivity {
 
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Conteúdos semelhantes", VisuConteudoFragment.class)
+                .add("Mais Conteúdos", VisuConteudoFragment.class)
                 .add("Detalhes", VisuDetalhesFragment.class)
                 .create());
 
@@ -64,6 +66,15 @@ public class Visualizacao1Activity extends AppCompatActivity {
 
         SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.viewpagertab);
         viewPagerTab.setViewPager(viewPager);
+
+        btnVamosLa = findViewById(R.id.btnVamosLa);
+        btnVamosLa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),PDFActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

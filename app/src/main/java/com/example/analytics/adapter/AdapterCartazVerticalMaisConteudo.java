@@ -1,24 +1,25 @@
 package com.example.analytics.adapter;
+
 import android.content.Context;
-import android.content.Intent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+        import android.content.Intent;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.ImageView;
+        import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
-import com.example.analytics.R;
-import com.example.analytics.activitys.Visualizacao1Activity;
-import com.example.analytics.model.CartazVerticalModel;
+        import androidx.recyclerview.widget.RecyclerView;
+        import com.example.analytics.R;
+        import com.example.analytics.activitys.Visualizacao1Activity;
+        import com.example.analytics.model.CartazVerticalModel;
 
-import java.util.List;
+        import java.util.List;
 
-public class AdapterCartazVertical extends RecyclerView.Adapter<AdapterCartazVertical.MyViewHolder> {
+public class AdapterCartazVerticalMaisConteudo extends RecyclerView.Adapter<AdapterCartazVerticalMaisConteudo.MyViewHolder> {
     private List<CartazVerticalModel> cartazVerticalModels;
     private Context context;
 
-    public AdapterCartazVertical(List<CartazVerticalModel> cartazVerticalModels, Context context) {
+    public AdapterCartazVerticalMaisConteudo(List<CartazVerticalModel> cartazVerticalModels, Context context) {
         this.cartazVerticalModels = cartazVerticalModels;
         this.context = context;
     }
@@ -26,7 +27,7 @@ public class AdapterCartazVertical extends RecyclerView.Adapter<AdapterCartazVer
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLista = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.adapter_cartaz_vertical,parent,false);
+                .inflate(R.layout.adapter_cartaz_vertical_mais_conteudo,parent,false);
         return new MyViewHolder(itemLista);
     }
 
@@ -69,7 +70,6 @@ public class AdapterCartazVertical extends RecyclerView.Adapter<AdapterCartazVer
             imageView  = itemView.findViewById(R.id.imageViewCartazVertical);
             txt  = itemView.findViewById(R.id.txtNomeConteudo);
         }
-
 
     }
 }
