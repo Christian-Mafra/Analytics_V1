@@ -14,27 +14,27 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.analytics.R;
 import com.example.analytics.configFirebase.ConfiguracaoFirebase;
-import com.example.analytics.model.CadastroModel;
+import com.example.analytics.model.UsuarioModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
-import com.google.firebase.auth.FirebaseUser;
 
 public class CadastroActivity extends AppCompatActivity {
     private Button btnJatenhoConta, btnCadastrar;
     private EditText txtNome, txtEmail, txtSenha, txtConfirmeSenha;
     String[] mensagens = {"Informe todos os campos","Confirme sua senha"};
     private FirebaseAuth autenticacao;
-    private CadastroModel novoCadastro;
+    private UsuarioModel novoCadastro;
+    private ProgressBar progressBar2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +52,10 @@ public class CadastroActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
         getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.transparente));
-        getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(),R.color.cor_tema_escuro));
+        getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(),R.color.gray));
 
         inicializacao();
+        progressBar2.setVisibility(View.GONE);
 
         btnJatenhoConta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +80,8 @@ public class CadastroActivity extends AppCompatActivity {
                         if(!senha.isEmpty()){
                             if(!confirmeSenha.isEmpty()){
                                 if(senha.equals(confirmeSenha)){
-                                    novoCadastro = new CadastroModel(nome,email,senha);
+                                    progressBar2.setVisibility(View.VISIBLE);
+                                    novoCadastro = new UsuarioModel(nome,email,senha);
                                     cadastrarUsuario();
                                 }else{
                                     Toast.makeText(getApplicationContext(), "Senhas incompatíveis", Toast.LENGTH_SHORT).show();
@@ -98,6 +100,7 @@ public class CadastroActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     public void inicializacao(){
@@ -116,7 +119,7 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+                    finish();
                 }else{
                     String excecao = "";
                     try{
@@ -147,4 +150,5 @@ public class CadastroActivity extends AppCompatActivity {
         }
         win.setAttributes(winParms);
     }
+
 }

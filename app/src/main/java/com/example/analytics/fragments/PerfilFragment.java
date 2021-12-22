@@ -1,8 +1,10 @@
 package com.example.analytics.fragments;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
@@ -14,10 +16,15 @@ import android.widget.Button;
 import com.example.analytics.R;
 import com.example.analytics.activitys.DownloadActivity;
 import com.example.analytics.activitys.FragmentsActivity;
+import com.example.analytics.activitys.MainActivity;
+import com.example.analytics.configFirebase.ConfiguracaoFirebase;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class PerfilFragment extends Fragment {
-    private Button button5, button8;
+    private Button button5, button7, button8;
+    private FirebaseAuth auth;
 
 
     @Override
@@ -35,6 +42,34 @@ public class PerfilFragment extends Fragment {
                 getContext().startActivity(intent);
             }
         });
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+                dialog.setTitle("Sair do Analytics");
+                dialog.setMessage(null);
+                dialog.setCancelable(false);
+                dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        auth = ConfiguracaoFirebase.getFirebaseAutentificacao();
+                        auth.signOut();
+                        getActivity().finish();
+                        Intent intent = new Intent(getContext(), LoginOuCadastroFragment.class);
+                        getContext().startActivity(new Intent(getContext(), MainActivity.class));
+                    }
+                });
+                dialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                dialog.create();
+                dialog.show();
+            }
+        });
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +83,8 @@ public class PerfilFragment extends Fragment {
     }
     public void iniciacao(View view){
         button5 = view.findViewById(R.id.button5);
+        button7 = view.findViewById(R.id.button7);
         button8 = view.findViewById(R.id.button8);
+
     }
 }

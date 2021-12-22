@@ -59,10 +59,7 @@ public class AdapterCartazVertical extends RecyclerView.Adapter<AdapterCartazVer
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
-        private int img;
         private TextView txt;
-
-
 
         public MyViewHolder( View itemView) {
             super(itemView);

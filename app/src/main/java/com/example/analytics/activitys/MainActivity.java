@@ -13,9 +13,12 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import com.example.analytics.R;
+import com.example.analytics.configFirebase.ConfiguracaoFirebase;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     private Button buttonLogin, buttonCadastro;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        verificarUsuário();
+    }
+
+    public void verificarUsuário(){
+        auth = ConfiguracaoFirebase.getFirebaseAutentificacao();
+        if(auth.getCurrentUser() != null){
+            abrirTelaPrincipal();
+        }
+    }
+
+    public void abrirTelaPrincipal(){
+        startActivity(new Intent(getApplicationContext(),PrincipalActivity.class));
+        finish();
     }
 
     private static void setWindowsFlag(Activity activity, final int Bits, Boolean on) {

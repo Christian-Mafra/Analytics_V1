@@ -1,17 +1,24 @@
 package com.example.analytics.model;
 
-public class CadastroModel {
+import com.google.firebase.database.Exclude;
+
+public class UsuarioModel {
     private String nome;
     private String email;
     private String senha;
 
-    public CadastroModel(String nome, String email, String senha) {
+    public UsuarioModel(String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
     }
 
-    public CadastroModel() {
+    public UsuarioModel(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
+    }
+
+    public UsuarioModel() {
     }
 
     public String getNome() {
@@ -29,7 +36,7 @@ public class CadastroModel {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    @Exclude
     public String getSenha() {
         return senha;
     }

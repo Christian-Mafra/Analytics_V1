@@ -34,7 +34,7 @@
                     android:id="@+id/imageView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/albert"
+                    app:srcCompat="@drawable/fritz"
                     tools:src="@tools:sample/avatars" />
             </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
