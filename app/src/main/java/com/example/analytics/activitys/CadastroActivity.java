@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.analytics.R;
 import com.example.analytics.configFirebase.ConfiguracaoFirebase;
+import com.example.analytics.helper.Base64Custom;
 import com.example.analytics.model.UsuarioModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,6 +28,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class CadastroActivity extends AppCompatActivity {
     private Button btnJatenhoConta, btnCadastrar;
@@ -34,7 +37,7 @@ public class CadastroActivity extends AppCompatActivity {
     String[] mensagens = {"Informe todos os campos","Confirme sua senha"};
     private FirebaseAuth autenticacao;
     private UsuarioModel novoCadastro;
-    private ProgressBar progressBar2;
+    private DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,6 @@ public class CadastroActivity extends AppCompatActivity {
         getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(),R.color.gray));
 
         inicializacao();
-        progressBar2.setVisibility(View.GONE);
 
         btnJatenhoConta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,18 +72,21 @@ public class CadastroActivity extends AppCompatActivity {
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                novoCadastro = new UsuarioModel();
                 String nome = txtNome.getText().toString();
                 String email = txtEmail.getText().toString();
                 String senha = txtSenha.getText().toString();
                 String confirmeSenha = txtConfirmeSenha.getText().toString();
+                reference = FirebaseDatabase.getInstance().getReference();
 
                 if(!nome.isEmpty()){
                     if(!email.isEmpty()){
                         if(!senha.isEmpty()){
                             if(!confirmeSenha.isEmpty()){
                                 if(senha.equals(confirmeSenha)){
-                                    progressBar2.setVisibility(View.VISIBLE);
-                                    novoCadastro = new UsuarioModel(nome,email,senha);
+                                    novoCadastro.setEmail(email);
+                                    novoCadastro.setSenha(senha);
+                                    novoCadastro.setNome(nome);
                                     cadastrarUsuario();
                                 }else{
                                     Toast.makeText(getApplicationContext(), "Senhas incompatíveis", Toast.LENGTH_SHORT).show();
@@ -119,6 +124,9 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    String idUsuario = Base64Custom.codificarBase64(novoCadastro.getEmail());
+                    novoCadastro.setIdUsuario(idUsuario);
+                    novoCadastro.salvar();
                     finish();
                 }else{
                     String excecao = "";

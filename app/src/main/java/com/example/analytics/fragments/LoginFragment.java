@@ -49,7 +49,9 @@ public class LoginFragment extends Fragment {
 
                 if(!email.isEmpty()){
                     if(!senha.isEmpty()){
-                        usuario = new UsuarioModel(email,senha);
+                        usuario = new UsuarioModel();
+                        usuario.setEmail(email);
+                        usuario.setSenha(senha);
                         validarLogin(usuario);
                     }else{
                         Toast.makeText(getContext(), "Informe uma senha", Toast.LENGTH_SHORT).show();

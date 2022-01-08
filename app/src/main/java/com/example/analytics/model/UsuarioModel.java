@@ -1,24 +1,34 @@
 package com.example.analytics.model;
 
+import com.example.analytics.configFirebase.ConfiguracaoFirebase;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
 public class UsuarioModel {
+    private String idUsuario;
     private String nome;
     private String email;
     private String senha;
 
-    public UsuarioModel(String nome, String email, String senha) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-    }
-
-    public UsuarioModel(String email, String senha) {
-        this.email = email;
-        this.senha = senha;
-    }
-
     public UsuarioModel() {
+    }
+
+    public void salvar(){
+
+        DatabaseReference reference = ConfiguracaoFirebase.getFirebaseDatabase();
+        reference.child("usuarios")
+                .child(this.getIdUsuario())
+                .setValue(this);
+
+    }
+
+    @Exclude
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNome() {
@@ -36,6 +46,7 @@ public class UsuarioModel {
     public void setEmail(String email) {
         this.email = email;
     }
+
     @Exclude
     public String getSenha() {
         return senha;

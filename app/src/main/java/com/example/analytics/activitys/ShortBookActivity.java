@@ -54,21 +54,28 @@ public class ShortBookActivity extends AppCompatActivity {
         preparaCartazVertical();
         AdapterShortBook adapterShortBook = new AdapterShortBook(listashortbook);
         recyclerViewShortBook.setAdapter(adapterShortBook);
-
     }
 
-
     public void preparaCartazVertical(){
-        ShortbookModel g = new ShortbookModel(R.drawable.pp,"Potêncial de redução" +
-                "","lewdjoewdjewjdlkewjfljwelfjewlkfjewfjiwoejdwejdfoipewjdwdwe´dfk");
+        ShortbookModel g = new ShortbookModel(R.drawable.pp
+                ,"Potêncial padrão de redução"
+                ,"É a espontaneidade, ou a tendência de uma espécie química adquirir elétrons e, desse modo, ser reduzida.");
         this.listashortbook.add(g);
-        g = new ShortbookModel(R.drawable.sulfetosinsoluveisemmeioacidoroteiro, "Sulfetos Insolúveis em Meio Ácido","dqwedwedwqedw");
+        g = new ShortbookModel(R.drawable.sulfetosinsoluveisemmeioacidoroteiro
+                , "Sulfetos Insolúveis em Meio Ácido"
+                ,"dqwedwedwqedw");
         this.listashortbook.add(g);
-        g = new ShortbookModel(R.drawable.sulfetosinsoluveisemmeiobasicoroteiro,"Sulfetos Insolúveis em Meio Básico","wdfewfewrfew");
+        g = new ShortbookModel(R.drawable.sulfetosinsoluveisemmeiobasicoroteiro
+                ,"Sulfetos Insolúveis em Meio Básico"
+                ,"wdfewfewrfew");
         this.listashortbook.add(g);
-        g = new ShortbookModel(R.drawable.carbonatosinsoluveisroteiro,"Carbonatos Insolúveis","jkdshfvdjifhkds");
+        g = new ShortbookModel(R.drawable.carbonatosinsoluveisroteiro
+                ,"Carbonatos Insolúveis"
+                ,"jkdshfvdjifhkds");
         this.listashortbook.add(g);
-        g = new ShortbookModel(R.drawable.cationssoluveisroteiro,"Cátions Solúveis","kdsgcbjkdwsbfkdjk");
+        g = new ShortbookModel(R.drawable.cationssoluveisroteiro
+                ,"Cátions Solúveis"
+                ,"kdsgcbjkdwsbfkdjk");
         this.listashortbook.add(g);
     }
 

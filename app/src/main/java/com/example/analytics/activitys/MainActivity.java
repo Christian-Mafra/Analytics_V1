@@ -15,6 +15,8 @@ import android.widget.Button;
 import com.example.analytics.R;
 import com.example.analytics.configFirebase.ConfiguracaoFirebase;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     private Button buttonLogin, buttonCadastro;
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void verificarUsuário(){
         auth = ConfiguracaoFirebase.getFirebaseAutentificacao();
+        //auth.signOut();
         if(auth.getCurrentUser() != null){
             abrirTelaPrincipal();
         }
