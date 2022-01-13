@@ -1,5 +1,7 @@
 package com.example.analytics.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,15 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.analytics.R;
+import com.example.analytics.activitys.Visualizacao1Activity;
 import com.example.analytics.model.VisualizacaoConteudoModel;
 
 import java.util.List;
 
 public class AdapterVisualizacaoConteudo extends RecyclerView.Adapter<AdapterVisualizacaoConteudo.MyViewHolder> {
     List<VisualizacaoConteudoModel> visualizacaoConteudo;
+    private Context context;
 
-    public AdapterVisualizacaoConteudo(List<VisualizacaoConteudoModel> ListavisualizacaoConteudo) {
+    public AdapterVisualizacaoConteudo(List<VisualizacaoConteudoModel> ListavisualizacaoConteudo, Context context) {
         this.visualizacaoConteudo = ListavisualizacaoConteudo;
+        this.context = context;
     }
 
     @NonNull
@@ -31,7 +36,19 @@ public class AdapterVisualizacaoConteudo extends RecyclerView.Adapter<AdapterVis
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         VisualizacaoConteudoModel visualizacaoConteudoModel = visualizacaoConteudo.get(position);
-        holder.imagensCartazesVisualizacao.setImageResource(visualizacaoConteudoModel.getImage());
+        holder.imagensCartazesVisualizacao.setImageResource(visualizacaoConteudoModel.getFoto());
+        holder.imagensCartazesVisualizacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context.getApplicationContext(), Visualizacao1Activity.class);
+                intent.putExtra("foto",visualizacaoConteudoModel.getFoto());
+                intent.putExtra("nome",""+visualizacaoConteudoModel.getNome());
+                intent.putExtra("desc",""+visualizacaoConteudoModel.getDesc());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override

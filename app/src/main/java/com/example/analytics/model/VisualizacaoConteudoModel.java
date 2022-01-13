@@ -1,20 +1,8 @@
 package com.example.analytics.model;
 
-public class VisualizacaoConteudoModel {
-    private int image;
+public class VisualizacaoConteudoModel extends AbstractPost{
 
-    public VisualizacaoConteudoModel() {
-    }
-
-    public VisualizacaoConteudoModel(int image) {
-        this.image = image;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
+    public VisualizacaoConteudoModel(int foto, String nome, String desc) {
+        super(foto, nome, desc);
     }
 }

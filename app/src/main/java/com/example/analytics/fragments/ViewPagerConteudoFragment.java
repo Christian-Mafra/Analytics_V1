@@ -121,7 +121,7 @@ public class ViewPagerConteudoFragment extends Fragment {
         recyclerRecomendacao.setLayoutManager(layoutManagerC);
         //recyclerContinue.setHasFixedSize(true);
         preparaCartazHorizontal();
-        AdapterCartazHorizontal adapterCartazHorizontal = new AdapterCartazHorizontal(listcartazHorizontalModels);
+        AdapterCartazHorizontal adapterCartazHorizontal = new AdapterCartazHorizontal(listcartazHorizontalModels,getContext());
         recyclerRecomendacao.setAdapter(adapterCartazHorizontal);
 
 
@@ -131,60 +131,50 @@ public class ViewPagerConteudoFragment extends Fragment {
         recyclerContinue.setLayoutManager(layoutManagerA);
         //recyclerCloretos.setHasFixedSize(true);
         preparaContinueAssistindo();
-        AdapterContinueEstudando adapterContinueEstudando = new AdapterContinueEstudando(continueEstudando);
+        AdapterContinueEstudando adapterContinueEstudando = new AdapterContinueEstudando(continueEstudando,getContext());
         recyclerContinue.setAdapter(adapterContinueEstudando);
 
         return view;
     }
 
     //---------------------------------------------------------------------------------------------------------------------------------//
-    /*Context context;
-    private void setOnClickListner() {
-        listner = new AdapterCartazVertical.RecyclerViewClickListner() {
-            @Override
-            public void onClick(View v, int position) {
-                Intent intent = new Intent(getContext(), VisualizacaoActivity.class);
-                context.startActivity(intent);
-            }
-        };
-    }*/
 
     public void preparaCartazVertical(){
-        CartazVerticalModel g = new CartazVerticalModel(R.drawable.cloretosinsoluveisroteiro,"Cloretos Insolúveis");
+        CartazVerticalModel g = new CartazVerticalModel(R.drawable.cloretosinsoluveisroteiro,"Cloretos Insolúveis","O primeiro grupo de cátions é caracterizado por conter cátions que precipitam com o cloreto");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacidoroteiro, "Sulfetos Insolúveis em Meio Ácido");
+        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacidoroteiro, "Sulfetos Insolúveis em Meio Ácido","dfdsjf");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeiobasicoroteiro,"Sulfetos Insolúveis em Meio Básico");
+        g = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeiobasicoroteiro,"Sulfetos Insolúveis em Meio Básico","lkewjfoewijdf");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.carbonatosinsoluveisroteiro,"Carbonatos Insolúveis");
+        g = new CartazVerticalModel(R.drawable.carbonatosinsoluveisroteiro,"Carbonatos Insolúveis","dkjfsokf");
         this.listacartazVerticalModels.add(g);
-        g = new CartazVerticalModel(R.drawable.cationssoluveisroteiro,"Cátions Solúveis");
+        g = new CartazVerticalModel(R.drawable.cationssoluveisroteiro,"Cátions Solúveis","wefdjnwo");
         this.listacartazVerticalModels.add(g);
     }
 
     public void preparaCartazHorizontal(){
-        CartazHorizontalModel h = new CartazHorizontalModel(R.drawable.image1);
+        CartazHorizontalModel h = new CartazHorizontalModel(R.drawable.image1,"hdsvhdskj","dflkdsjflk");
         this.listcartazHorizontalModels.add(h);
-        h = new CartazHorizontalModel(R.drawable.close);
+        h = new CartazHorizontalModel(R.drawable.close,"hbhjbhjb","bbjkbjk");
         this.listcartazHorizontalModels.add(h);
-        h = new CartazHorizontalModel(R.drawable.joyce);
+        h = new CartazHorizontalModel(R.drawable.joyce,"dcjndskcj","cnsdjkcn");
         this.listcartazHorizontalModels.add(h);
-        h = new CartazHorizontalModel(R.drawable.anion);
+        h = new CartazHorizontalModel(R.drawable.anion,"dfnvfjknvk","sdncjkdsnkjc");
         this.listcartazHorizontalModels.add(h);
-        h = new CartazHorizontalModel(R.drawable.aniong2);
+        h = new CartazHorizontalModel(R.drawable.aniong2,"dkcdslm,","kdwedmlk");
         this.listcartazHorizontalModels.add(h);
     }
 
     public void preparaContinueAssistindo(){
-        ContinueEstudandoModel h = new ContinueEstudandoModel(R.drawable.aniong5);
+        ContinueEstudandoModel h = new ContinueEstudandoModel(R.drawable.aniong5,"njnknjk","jmklnlkn");
         this.continueEstudando.add(h);
-        h = new ContinueEstudandoModel(R.drawable.aniong3);
+        h = new ContinueEstudandoModel(R.drawable.aniong3,"jijij","jnjknjn");
         this.continueEstudando.add(h);
-        h = new ContinueEstudandoModel(R.drawable.aniong6);
+        h = new ContinueEstudandoModel(R.drawable.aniong6,"klmlk","kjcndsj");
         this.continueEstudando.add(h);
-        h = new ContinueEstudandoModel(R.drawable.aniong4);
+        h = new ContinueEstudandoModel(R.drawable.aniong4,"jasdnjkfn","dnkjew");
         this.continueEstudando.add(h);
-        h = new ContinueEstudandoModel(R.drawable.image1);
+        h = new ContinueEstudandoModel(R.drawable.image1,"ndewjkdn","wekdmxlkewd");
         this.continueEstudando.add(h);
     }
 

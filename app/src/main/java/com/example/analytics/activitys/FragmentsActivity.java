@@ -15,13 +15,16 @@ import android.view.WindowManager;
 import com.example.analytics.R;
 import com.example.analytics.fragments.LoginFragment;
 import com.example.analytics.fragments.LoginOuCadastroFragment;
+import com.example.analytics.fragments.NovoExperimentoFragment;
 import com.example.analytics.fragments.QuemSomosFragment;
+import com.example.analytics.fragments.ViewPagerExperimentosFragment;
 
 public class FragmentsActivity extends AppCompatActivity {
     private LoginFragment loginFragment;
     private LoginOuCadastroFragment loginOuCadastroFragment;
     private QuemSomosFragment quemSomosFragment;
-
+    private ViewPagerExperimentosFragment viewPagerExperimentosFragment;
+    private NovoExperimentoFragment novoexperimentoFragment;
 
 
     @Override
@@ -56,18 +59,25 @@ public class FragmentsActivity extends AppCompatActivity {
             transaction.replace(R.id.frameConteudo2, loginOuCadastroFragment);
             transaction.commit();
         }
-        /*
+        viewPagerExperimentosFragment = new ViewPagerExperimentosFragment();
         if(numero == 2) {
-            getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(), R.color.gray));
+            getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(), R.color.cor_tema_claro));
             getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.transparente));
-            transaction.replace(R.id.frameConteudo2, );
+            transaction.replace(R.id.frameConteudo2, viewPagerExperimentosFragment);
             transaction.commit();
-        }*/
+        }
         loginFragment = new LoginFragment();
         if(numero == 3) {
             getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(), R.color.gray));
             getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.transparente));
             transaction.replace(R.id.constraint, loginFragment);
+            transaction.commit();
+        }
+        novoexperimentoFragment = new NovoExperimentoFragment();
+        if(numero == 5) {
+            getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(), R.color.cor_tema_escuro));
+            getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.transparente));
+            transaction.replace(R.id.frameConteudo2, novoexperimentoFragment);
             transaction.commit();
         }
         quemSomosFragment = new QuemSomosFragment();

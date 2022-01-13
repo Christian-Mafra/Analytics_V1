@@ -1,20 +1,8 @@
 package com.example.analytics.model;
 
-public class CartazHorizontalModel {
-    private int imageHorizontal;
+public class CartazHorizontalModel extends AbstractPost {
 
-    public CartazHorizontalModel() {
-    }
-
-    public CartazHorizontalModel(int imageHorizontal) {
-        this.imageHorizontal = imageHorizontal;
-    }
-
-    public int getImageHorizontal() {
-        return imageHorizontal;
-    }
-
-    public void setImageHorizontal(int imageHorizontal) {
-        this.imageHorizontal = imageHorizontal;
+    public CartazHorizontalModel(int foto, String nome, String desc) {
+        super(foto, nome, desc);
     }
 }

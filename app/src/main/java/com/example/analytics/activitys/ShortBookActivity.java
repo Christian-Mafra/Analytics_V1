@@ -52,7 +52,7 @@ public class ShortBookActivity extends AppCompatActivity {
         //Config Adapter
         listashortbook.clear();
         preparaCartazVertical();
-        AdapterShortBook adapterShortBook = new AdapterShortBook(listashortbook);
+        AdapterShortBook adapterShortBook = new AdapterShortBook(listashortbook, getApplicationContext());
         recyclerViewShortBook.setAdapter(adapterShortBook);
     }
 

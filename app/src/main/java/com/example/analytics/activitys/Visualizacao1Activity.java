@@ -26,6 +26,7 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 public class Visualizacao1Activity extends AppCompatActivity {
     private ImageView img;
     private TextView txtNomeConteudo;
+    private TextView txtDescConteudo;
     private Button btnVamosLa;
 
     @Override
@@ -35,6 +36,7 @@ public class Visualizacao1Activity extends AppCompatActivity {
 
         img = findViewById(R.id.imgVisualizacao);
         txtNomeConteudo = findViewById(R.id.txtNomeConteudo);
+        txtDescConteudo = findViewById(R.id.txtDescConteudo);
 
         if(Build.VERSION.SDK_INT>=19 && Build.VERSION.SDK_INT<2){
             setWindowsFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
@@ -50,8 +52,9 @@ public class Visualizacao1Activity extends AppCompatActivity {
         getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(),R.color.cor_tema_escuro));
 
         //Recebendo imagem
-        img.setImageResource(getIntent().getIntExtra("img",0));
-        txtNomeConteudo.setText(getIntent().getStringExtra("txt"));
+        img.setImageResource(getIntent().getIntExtra("foto",0));
+        txtNomeConteudo.setText(getIntent().getStringExtra("nome"));
+        txtDescConteudo.setText(getIntent().getStringExtra("desc"));
 
         //SmartTabLayout
 

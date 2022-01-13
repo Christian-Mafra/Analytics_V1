@@ -1,20 +1,8 @@
 package com.example.analytics.model;
 
-public class ContinueEstudandoModel {
-    private int imageContinueEstudando;
+public class ContinueEstudandoModel extends AbstractPost{
 
-    public ContinueEstudandoModel() {
-    }
-
-    public ContinueEstudandoModel(int imageContinueEstudando) {
-        this.imageContinueEstudando = imageContinueEstudando;
-    }
-
-    public int getImageContinueEstudando() {
-        return imageContinueEstudando;
-    }
-
-    public void setImageContinueEstudando(int imageContinueEstudando) {
-        this.imageContinueEstudando = imageContinueEstudando;
+    public ContinueEstudandoModel(int foto, String nome, String desc) {
+        super(foto, nome, desc);
     }
 }

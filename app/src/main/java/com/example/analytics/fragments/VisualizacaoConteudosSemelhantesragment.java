@@ -37,30 +37,30 @@ public class VisualizacaoConteudosSemelhantesragment extends Fragment {
         recyclerViewVisualizacaoConteudo.setLayoutManager(layoutManagerA);
         //recyclerCloretos.setHasFixedSize(true);
         preparaVisualizacaoConteudo();
-        AdapterVisualizacaoConteudo adapterVisualizacaoConteudo = new AdapterVisualizacaoConteudo(visualizacaoConteudoModelList);
+        AdapterVisualizacaoConteudo adapterVisualizacaoConteudo = new AdapterVisualizacaoConteudo(visualizacaoConteudoModelList, getContext());
         recyclerViewVisualizacaoConteudo.setAdapter(adapterVisualizacaoConteudo);
 
         return view;
     }
 
     public void preparaVisualizacaoConteudo(){
-        VisualizacaoConteudoModel g = new VisualizacaoConteudoModel(R.drawable.diagramadetopo);
+        VisualizacaoConteudoModel g = new VisualizacaoConteudoModel(R.drawable.diagramadetopo,"nlknlk","knkl");
         this.visualizacaoConteudoModelList.add(g);
-        g = new VisualizacaoConteudoModel(R.drawable.bill);
+        g = new VisualizacaoConteudoModel(R.drawable.bill,"jknjknk","nkjnjkn");
         this.visualizacaoConteudoModelList.add(g);
-        g = new VisualizacaoConteudoModel(R.drawable.drew);
+        g = new VisualizacaoConteudoModel(R.drawable.drew,"klkij","jjj");
         this.visualizacaoConteudoModelList.add(g);
-        g = new VisualizacaoConteudoModel(R.drawable.aniong2);
+        g = new VisualizacaoConteudoModel(R.drawable.aniong2,"kjjkl","hjjkhj");
         this.visualizacaoConteudoModelList.add(g);
-        g = new VisualizacaoConteudoModel(R.drawable.flasks);
+        g = new VisualizacaoConteudoModel(R.drawable.flasks,"kljlkj","kjlkj");
         this.visualizacaoConteudoModelList.add(g);
-        g = new VisualizacaoConteudoModel(R.drawable.girl);
+        g = new VisualizacaoConteudoModel(R.drawable.girl,"lkkljlk","fjlkejglkerf");
         this.visualizacaoConteudoModelList.add(g);
-        g = new VisualizacaoConteudoModel(R.drawable.teamwork);
+        g = new VisualizacaoConteudoModel(R.drawable.teamwork,"kljlkjkl","klkljlk");
         this.visualizacaoConteudoModelList.add(g);
-        g = new VisualizacaoConteudoModel(R.drawable.aniong4);
+        g = new VisualizacaoConteudoModel(R.drawable.aniong4,"lkjkljlk","cjkdflkvjl");
         this.visualizacaoConteudoModelList.add(g);
-        g = new VisualizacaoConteudoModel(R.drawable.image5);
+        g = new VisualizacaoConteudoModel(R.drawable.image5,"dchdjksch","dcjdscjk");
         this.visualizacaoConteudoModelList.add(g);
     }
 }

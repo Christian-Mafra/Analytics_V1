@@ -35,13 +35,14 @@ public class AdapterCartazVerticalMaisConteudo extends RecyclerView.Adapter<Adap
     public void onBindViewHolder( MyViewHolder holder, int position) {
 
         CartazVerticalModel cartazVerticalModela = cartazVerticalModels.get(position);
-        holder.imageView.setImageResource(cartazVerticalModela.getImageViewCartazVertical());
+        holder.imageView.setImageResource(cartazVerticalModela.getFoto());
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context.getApplicationContext(), Visualizacao1Activity.class);
-                intent.putExtra("img",cartazVerticalModela.getImageViewCartazVertical());
-                intent.putExtra("txt",""+cartazVerticalModela.getNomeCartazVertical());
+                intent.putExtra("foto",cartazVerticalModela.getFoto());
+                intent.putExtra("nome",""+cartazVerticalModela.getNome());
+                intent.putExtra("desc",""+cartazVerticalModela.getDesc());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }

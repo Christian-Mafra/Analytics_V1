@@ -1,5 +1,7 @@
 package com.example.analytics.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +12,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.analytics.R;
+import com.example.analytics.activitys.Visualizacao1Activity;
 import com.example.analytics.model.ShortbookModel;
 
 import java.util.List;
 
 public class AdapterShortBook extends RecyclerView.Adapter<AdapterShortBook.MyViewHolder> {
     private List<ShortbookModel> listShortbook;
+    private Context context;
 
-    public AdapterShortBook(List<ShortbookModel> listShortbook) {
+    public AdapterShortBook(List<ShortbookModel> listShortbook, Context context) {
         this.listShortbook = listShortbook;
+        this.context = context;
     }
 
     @NonNull
@@ -32,14 +37,30 @@ public class AdapterShortBook extends RecyclerView.Adapter<AdapterShortBook.MyVi
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         ShortbookModel shortbookModel = this.listShortbook.get(position);
-        holder.imageView.setImageResource(shortbookModel.getFoto());
         holder.txt.setText(shortbookModel.getNome());
         holder.desc.setText(shortbookModel.getDesc());
+        holder.imageView.setImageResource(shortbookModel.getFoto());
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context.getApplicationContext(), Visualizacao1Activity.class);
+                intent.putExtra("foto",shortbookModel.getFoto());
+                intent.putExtra("nome",""+shortbookModel.getNome());
+                intent.putExtra("desc",""+shortbookModel.getDesc());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
     public int getItemCount() {
         return this.listShortbook.size();
+    }
+
+    public interface RecyclerViewClickListner{
+        void onClick(View v, int position);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{

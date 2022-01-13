@@ -45,17 +45,17 @@ public class VisuConteudoFragment extends Fragment {
         return view;
     }
     public void preparaMaisConteudo(){
-        CartazVerticalModel h = new CartazVerticalModel(R.drawable.cloretosinsoluveisroteiro,"Cloretos Insoluveis");
+        CartazVerticalModel h = new CartazVerticalModel(R.drawable.cloretosinsoluveisroteiro,"Cloretos Insoluveis","sd,cmds.,c");
         this.maisDetalhes.add(h);
-        h = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacidoroteiro,"Sulfetos Insoluveis em Meio Ácido");
+        h = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeioacidoroteiro,"Sulfetos Insoluveis em Meio Ácido","kdfmdlkf");
         this.maisDetalhes.add(h);
-        h = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeiobasicoroteiro,"Sulfetos Insoluveis em Meio Básico");
+        h = new CartazVerticalModel(R.drawable.sulfetosinsoluveisemmeiobasicoroteiro,"Sulfetos Insoluveis em Meio Básico","sdlkfmdksfm");
         this.maisDetalhes.add(h);
-        h = new CartazVerticalModel(R.drawable.carbonatosinsoluveisroteiro,"Carbonatos Insoluveis");
+        h = new CartazVerticalModel(R.drawable.carbonatosinsoluveisroteiro,"Carbonatos Insoluveis","sdkmfvkdsmlf");
         this.maisDetalhes.add(h);
-        h = new CartazVerticalModel(R.drawable.cationssoluveisroteiro,"Cations Soluveis");
+        h = new CartazVerticalModel(R.drawable.cationssoluveisroteiro,"Cations Soluveis","ldskfdslkfm");
         this.maisDetalhes.add(h);
-        h = new CartazVerticalModel(R.drawable.cloretosinsoluveisroteiro,"Cloretos Insoluveis");
+        h = new CartazVerticalModel(R.drawable.cloretosinsoluveisroteiro,"Cloretos Insoluveis","kdsflvmdflkvm");
         this.maisDetalhes.add(h);
     }
 }

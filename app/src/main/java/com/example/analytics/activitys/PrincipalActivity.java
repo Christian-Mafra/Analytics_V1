@@ -74,7 +74,7 @@ public class PrincipalActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), FragmentsActivity.class);
-                intent.putExtra("fragments",7);
+                intent.putExtra("fragments",2);
                 startActivity(intent);
             }
         });

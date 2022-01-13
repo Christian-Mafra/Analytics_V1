@@ -1,5 +1,7 @@
 package com.example.analytics.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,15 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.analytics.R;
+import com.example.analytics.activitys.Visualizacao1Activity;
 import com.example.analytics.model.ContinueEstudandoModel;
 
 import java.util.List;
 
 public class AdapterContinueEstudando extends RecyclerView.Adapter<AdapterContinueEstudando.MyViewHolder> {
     private List<ContinueEstudandoModel> continueEstudandoModel;
+    private Context context;
 
-    public AdapterContinueEstudando(List<ContinueEstudandoModel> continueEstudandoModelList) {
+    public AdapterContinueEstudando(List<ContinueEstudandoModel> continueEstudandoModelList, Context context) {
         this.continueEstudandoModel = continueEstudandoModelList;
+        this.context = context;
     }
 
     @NonNull
@@ -31,7 +36,19 @@ public class AdapterContinueEstudando extends RecyclerView.Adapter<AdapterContin
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         ContinueEstudandoModel continueEstudando = continueEstudandoModel.get(position);
-        holder.imageView.setImageResource(continueEstudando.getImageContinueEstudando());
+        holder.imageView.setImageResource(continueEstudando.getFoto());
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context.getApplicationContext(), Visualizacao1Activity.class);
+                intent.putExtra("foto",continueEstudando.getFoto());
+                intent.putExtra("nome",""+continueEstudando.getNome());
+                intent.putExtra("desc",""+continueEstudando.getDesc());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override

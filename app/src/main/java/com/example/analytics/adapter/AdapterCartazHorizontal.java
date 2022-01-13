@@ -1,4 +1,6 @@
 package com.example.analytics.adapter;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -6,14 +8,17 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.analytics.R;
+import com.example.analytics.activitys.Visualizacao1Activity;
 import com.example.analytics.model.CartazHorizontalModel;
 import java.util.List;
 
 public class AdapterCartazHorizontal extends RecyclerView.Adapter<AdapterCartazHorizontal.MyViewHolder> {
     List<CartazHorizontalModel> cartazHorizontal;
+    private Context context;
 
-    public AdapterCartazHorizontal(List<CartazHorizontalModel> h) {
-        this.cartazHorizontal = h;
+    public AdapterCartazHorizontal(List<CartazHorizontalModel> cartazHorizontal, Context context) {
+        this.cartazHorizontal = cartazHorizontal;
+        this.context = context;
     }
 
     @NonNull
@@ -27,7 +32,18 @@ public class AdapterCartazHorizontal extends RecyclerView.Adapter<AdapterCartazH
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         CartazHorizontalModel horizontalModel = cartazHorizontal.get(position);
-        holder.imageHorizontal.setImageResource(horizontalModel.getImageHorizontal());
+        holder.imageHorizontal.setImageResource(horizontalModel.getFoto());
+        holder.imageHorizontal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context.getApplicationContext(), Visualizacao1Activity.class);
+                intent.putExtra("foto",horizontalModel.getFoto());
+                intent.putExtra("nome",""+horizontalModel.getNome());
+                intent.putExtra("desc",""+horizontalModel.getDesc());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
 
     }
 

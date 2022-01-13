@@ -66,7 +66,7 @@
                         android:text="Vamos lá!"
                         android:textAllCaps="false"
                         app:cornerRadius="20dp"
-                        app:layout_constraintBottom_toTopOf="@+id/textView6"
+                        app:layout_constraintBottom_toTopOf="@+id/txtDescConteudo"
                         app:layout_constraintStart_toStartOf="parent" />
 
                     <TextView
@@ -126,7 +126,7 @@
                         app:layout_constraintStart_toStartOf="@+id/txtNomeConteudo" />
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/txtDescConteudo"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
