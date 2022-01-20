@@ -13,6 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.analytics.R;
+import com.example.analytics.fragments.FluxogramaInterativoFragment;
 import com.example.analytics.fragments.LoginFragment;
 import com.example.analytics.fragments.LoginOuCadastroFragment;
 import com.example.analytics.fragments.NovoExperimentoFragment;
@@ -25,6 +26,7 @@ public class FragmentsActivity extends AppCompatActivity {
     private QuemSomosFragment quemSomosFragment;
     private ViewPagerExperimentosFragment viewPagerExperimentosFragment;
     private NovoExperimentoFragment novoexperimentoFragment;
+    private FluxogramaInterativoFragment fluxogramaInterativoFragment;
 
 
     @Override
@@ -78,6 +80,13 @@ public class FragmentsActivity extends AppCompatActivity {
             getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(), R.color.cor_tema_escuro));
             getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.transparente));
             transaction.replace(R.id.frameConteudo2, novoexperimentoFragment);
+            transaction.commit();
+        }
+        fluxogramaInterativoFragment = new FluxogramaInterativoFragment();
+        if(numero == 6) {
+            getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
+            getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.transparente));
+            transaction.replace(R.id.frameConteudo2, fluxogramaInterativoFragment);
             transaction.commit();
         }
         quemSomosFragment = new QuemSomosFragment();

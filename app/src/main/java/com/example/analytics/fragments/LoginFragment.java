@@ -52,7 +52,8 @@ public class LoginFragment extends Fragment {
                         usuario = new UsuarioModel();
                         usuario.setEmail(email);
                         usuario.setSenha(senha);
-                        validarLogin(usuario);
+                        startActivity(new Intent(getContext(),PrincipalActivity.class));
+                        //validarLogin(usuario);
                     }else{
                         Toast.makeText(getContext(), "Informe uma senha", Toast.LENGTH_SHORT).show();
                     }
@@ -107,6 +108,7 @@ public class LoginFragment extends Fragment {
         });
     }
     public void abrirTelaPrincipal(){
+        startActivity(new Intent(getContext(),PrincipalActivity.class));
         getActivity().finish();
     }
 }

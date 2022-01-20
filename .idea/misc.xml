@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/background_btnnao.xml" value="0.2203125" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/background_btnsim.xml" value="0.2203125" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/background_card_azul.xml" value="0.2203125" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/background_card_fluxograma_interativo.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/background_fundo.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/background_larqanja.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/branco_tema_background.xml" value="0.2203125" />
@@ -16,6 +20,7 @@
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/preto_transparente_background.xml" value="0.1925925925925926" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/tema_claro_cackground.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/transparente_preto.xml" value="0.2203125" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/font/viga.xml" value="0.234375" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_cadastro.xml" value="0.25" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_download.xml" value="0.25" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_fragments.xml" value="0.20416666666666666" />
@@ -37,6 +42,7 @@
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/adapter_shortbook.xml" value="0.33" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_cadastro.xml" value="0.33" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_detalhes.xml" value="0.2" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_fluxograma_interativo.xml" value="0.25" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_login_ou_cadastro.xml" value="0.1" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_novo_experimento.xml" value="0.20416666666666666" />
