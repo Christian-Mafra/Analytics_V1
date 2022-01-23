@@ -56,20 +56,19 @@ public class FluxogramaInterativoFragment extends Fragment {
     private ImageView img;
     private ImageButton imageButton4;
     int i =1;
-    private Fluxograma.CloretosInsoluvris fluxogramaCloretos;
-
+    private Fluxograma cloretosInsoluvris;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view =  inflater.inflate(R.layout.fragment_fluxograma_interativo, container, false);
         iniciar(view);
-        fluxogramaCloretos = (Fluxograma.CloretosInsoluvris) new Fluxograma();
+        cloretosInsoluvris = new Fluxograma();
 
-        txtPasso.setText(fluxogramaCloretos.getPasso(1));
-        txtAzul.setText(fluxogramaCloretos.getTxtAzul(1));
-        txtExp.setText(fluxogramaCloretos.getExp(1));
-        img.setImageResource(fluxogramaCloretos.getImg(1));
+        txtPasso.setText(cloretosInsoluvris.getPasso(1));
+        txtAzul.setText(cloretosInsoluvris.getTxtAzul(1));
+        txtExp.setText(cloretosInsoluvris.getExp(1));
+        img.setImageResource(cloretosInsoluvris.getImg(1));
         i=2;
 
         btnSim.setOnClickListener(new View.OnClickListener() {
@@ -77,11 +76,11 @@ public class FluxogramaInterativoFragment extends Fragment {
             public void onClick(View v) {
                 if(i==2){
                     trocarCartão(2);
-                    txtPasso.setText(fluxogramaCloretos.getPasso(2));
-                    txtAzul.setText(fluxogramaCloretos.getTxtAzul(2));
-                    txtExp.setText(fluxogramaCloretos.getExp(2));
-                    img.setImageResource(fluxogramaCloretos.getImg(2));
-                    i=i++;
+                    txtPasso.setText(cloretosInsoluvris.getPasso(2));
+                    txtAzul.setText(cloretosInsoluvris.getTxtAzul(2));
+                    txtExp.setText(cloretosInsoluvris.getExp(2));
+                    img.setImageResource(cloretosInsoluvris.getImg(2));
+                    i=3;
                 }else{
                     if(i==2){
                         //trocarCartão(1);
@@ -89,6 +88,14 @@ public class FluxogramaInterativoFragment extends Fragment {
                         txtAzul.setText("No sobrenadante, goteje K2CrO4");
                         txtAmarelo.setText("Formou precipitado amarelo?");
                         i=3;
+                    }else{
+                        if(i==4){
+                            txtPasso.setText(cloretosInsoluvris.getPasso(4));
+                            txtAzul.setText(cloretosInsoluvris.getTxtAzul(4));
+                            txtExp.setText(cloretosInsoluvris.getExp(4));
+                            img.setImageResource(cloretosInsoluvris.getImg(4));
+                            i=5;
+                        }
                     }
                 }
             }
@@ -99,16 +106,12 @@ public class FluxogramaInterativoFragment extends Fragment {
             public void onClick(View v) {
                 if(i==3){
                     trocarCartão(1);
-                    txtPasso.setText("Passo 3");
-                    txtAzul.setText(fluxogramaCloretos.getTxtAzul(3));
-                    txtAmarelo.setText("Formou precipitado amarelo?");
-                    txtExp.setText("Ao observe a formação de um sólido branco, promova a centrifugação. " +
-                            "Reserve o sobrenadante, pois neste pode conter cátions dos grupos 2, 3, 4 e 5. Ao precipitado, " +
-                            "promova a lavangem com 4 gotas de água e 2 gotas de HCl 3,0 mol/L Ao precipitado, " +
-                            "adicione água destilada aquecida e agite ultilizando um balão de vidro. Novamente, " +
-                            "leve a mistura para a centrífuga e separe o sobrenadante do precipidado.");
-                    img.setImageResource(R.drawable.dicrtomatodechumbo);
-                    i=3;
+                    txtPasso.setText(cloretosInsoluvris.getPasso(3));
+                    txtAzul.setText(cloretosInsoluvris.getTxtAzul(3));
+                    txtAmarelo.setText(cloretosInsoluvris.getTxtAmarelo(3));
+                    txtExp.setText(cloretosInsoluvris.getExp(3));
+                    img.setImageResource(cloretosInsoluvris.getImg(3));
+                    i=4;
                 }else{
                     if(i==i){
 
@@ -134,8 +137,8 @@ public class FluxogramaInterativoFragment extends Fragment {
             btnNao.setVisibility(View.VISIBLE);
             btnSim.setVisibility(View.VISIBLE);
 
-            constraintLayoutFora.setBackgroundResource(R.drawable.background_card_azul);
-            constraintLayoutdentro.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.azul_escuro));
+            //constraintLayoutFora.setBackgroundResource(R.drawable.background_card_azul);
+            //constraintLayoutdentro.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.azul_escuro));
             //constraintLayoutFora.setDrawingCacheBackgroundColor(R.drawable.background_card_azul);
 
         }
@@ -151,9 +154,9 @@ public class FluxogramaInterativoFragment extends Fragment {
             btnNao.setVisibility(View.GONE);
             btnSim.setVisibility(View.GONE);
 
-            constraintLayoutFora.setBackgroundResource(R.drawable.background_btnprox);
+            //constraintLayoutFora.setBackgroundResource(R.drawable.background_btnprox);
             //constraintLayoutFora.setDrawingCacheBackgroundColor(R.drawable.background_btnprox);
-            constraintLayoutdentro.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.laranja_escuro));
+            //constraintLayoutdentro.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.laranja_escuro));
         }
     }
 

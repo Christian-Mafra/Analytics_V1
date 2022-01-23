@@ -12,8 +12,6 @@ public class Fluxograma {
     private int img;
 
 
-    public class CloretosInsoluvris extends Fluxograma{
-
         public String getPasso(int i) {
                 passo = "Passo "+i;
                 return passo;
@@ -30,10 +28,10 @@ public class Fluxograma {
                 txtAzul = "Ao sobrenadante, adicione 3 gotas de K2CrO4 3 molar";
             }
             if(i==4){
-                txtAzul = "Passo 4";
+                txtAzul = "Ao precipitado, adicione 8 gotas de NH4OH concentrado";
             }
 
-            return exp;
+            return txtAzul;
         }
 
         public String getExp(int i) {
@@ -43,18 +41,23 @@ public class Fluxograma {
                         " independentemente do valor de pH.";
             }
             if(i==2){
-                exp = "Ao observe a formação de um sólido branco, promova a centrifugação. " +
-                        "Separe e reserve o sobrenadante em um tubo, pois neste pode conter cátions dos grupos 2, 3, 4 e 5.\n \n " +
-                        "Ao precipitado, promova a lavangem com 4 gotas de água e 2 gotas de HCl 3,0 molar Ao precipitado, " +
-                        "adicione água destilada aquecida e agite ultilizando um balão de vidro.\n \n Novamente, " +
-                        "leve a mistura para a centrífuga e separe o sobrenadante do precipidado.";
+                exp = "Observando a formação de um sólido branco, promova a centrifugação. " +
+                        "Separe o sobrenadante em um tubo e reserve, pois neste pode conter cátions dos grupos 2, 3, 4 e 5.\n \n " +
+                        "Ao precipitado adicione água destilada aquecida e agite ultilizando um bastão de vidro.\n \n" +
+                        "Novamente, leve a mistura para a centrífuga e separe o sobrenadante do precipidado.";
             }
             if(i==3){
-                exp = "Apesar de serem considerados insolúveis ao cloreto, entre eles há uma diferença discrepante nos valores de Kps," +
-                        " fazendo com que o cloreto de chumbo (II) se solubilize primeiro quando adicionado água deionizada quente.";
+                exp = "Nesta etapa, os íons Ag+ e Hg22+ já não compõe mais o sobrenadante, visto que estes mantem-se insolúveis " +
+                        "à 100⁰C e são separados na centrifugação. \n\n" +
+                        "Ao reagir o cromato de potássio com íons de chumbo, é formado o sólido cromato de chumbo (II) (PbCrO4) que possui cor amarela";
             }
             if(i==4){
-                exp = "Passo 4";
+                exp = "Ao adicionar NH4OH em uma mistura contendo o sal de cloreto de mercúrio (I), " +
+                        "haverá uma reação de oxirredução, onde ocorre o desproporcionamento do Hg+, que se reduz a Hg0(l) e " +
+                        "se oxida a HgNH2Cl(s), que é chamado de amidocloreto de mercúrio. Visualmente há a predominância da cor preta, " +
+                        "entretanto, estes precipitados possuem cores destintas. O Hg0(l) apresenta coloração preta enquanto o " +
+                        "amidocloreto de mercúrio (II) apresenta a coloração cinza.\n\n" +
+                        "Diferente do mercúrio, a prata forma um complexo solúvel ao reagir com o hidróxido de amônia";
             }
 
             return exp;
@@ -71,7 +74,7 @@ public class Fluxograma {
                 img = R.drawable.dicrtomatodechumbo;
             }
             if(i==4){
-                img = R.drawable.cloretoprata;
+                img = R.drawable.hgzero;
             }
 
             return img;
@@ -83,14 +86,11 @@ public class Fluxograma {
             if(i==3){
                 txtAmarelo = "Formou um precipitado amarelo?";
             }
+            if(i==4){
+                txtAmarelo = "Formou um precipitado preto?";
+            }
 
             return txtAmarelo;
         }
-
-
-
-
-
-    }
 
 }
