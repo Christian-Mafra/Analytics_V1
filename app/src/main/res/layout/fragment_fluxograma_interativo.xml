@@ -103,6 +103,17 @@
                         app:layout_constraintTop_toBottomOf="@+id/divider13" />
 
                     <View
+                        android:id="@+id/divider9"
+                        android:layout_width="4dp"
+                        android:layout_height="0dp"
+                        android:background="#FFFA00"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView13" />
+
+                    <View
                         android:id="@+id/divider8"
                         android:layout_width="4dp"
                         android:layout_height="0dp"
@@ -114,15 +125,15 @@
 
                     <ImageButton
                         android:id="@+id/imageButton4"
-                        android:layout_width="0dp"
-                        android:layout_height="150dp"
+                        android:layout_width="300dp"
+                        android:layout_height="160dp"
                         android:backgroundTint="@color/transparente"
                         android:scaleType="fitXY"
                         android:src="@drawable/decisaoama"
+                        android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="@+id/guideline5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/cardAzul"
                         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
@@ -130,12 +141,13 @@
                         android:id="@+id/txtAmarelo"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:fontFamily="@font/luckiest_guy"
+                        android:fontFamily="@font/viga"
                         android:gravity="center"
                         android:text="Formou um precipitado branco?"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textSize="20sp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/imageButton4"
                         app:layout_constraintEnd_toStartOf="@+id/guideline20"
                         app:layout_constraintStart_toStartOf="@+id/guideline19"
@@ -155,10 +167,10 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/textView36"
+                            android:id="@+id/txtPasso"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="60dp"
+                            android:layout_marginStart="70dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="8dp"
                             android:fontFamily="@font/luckiest_guy"
@@ -173,7 +185,7 @@
                         android:layout_height="50dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginBottom="8dp"
-                        android:elevation="2dp"
+                        android:elevation="5dp"
                         android:src="@drawable/tubes"
                         app:layout_constraintBottom_toBottomOf="@+id/cardView13"
                         app:layout_constraintStart_toStartOf="@+id/cardView13" />
@@ -194,6 +206,7 @@
                         tools:visibility="visible">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayoutFora"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/background_card_azul">
@@ -202,10 +215,9 @@
                                 android:id="@+id/cardView9"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginEnd="8dp"
-                                app:cardBackgroundColor="#03A9F4"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="4dp"
                                 app:cardCornerRadius="15dp"
                                 app:cardElevation="0dp"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -213,25 +225,44 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/constraintLayoutDentro"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
+                                    android:layout_height="match_parent"
+                                    android:background="@color/azul_escuro">
 
                                     <TextView
                                         android:id="@+id/txtAzul"
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
                                         android:layout_marginEnd="8dp"
                                         android:fontFamily="@font/viga"
                                         android:gravity="center"
                                         android:text="Adicione 2mL de HCl 3 molar"
                                         android:textAllCaps="false"
-                                        android:textColor="@color/white"
+                                        android:textColor="#FFFFFF"
                                         android:textSize="22sp"
-                                        app:layout_constraintBottom_toBottomOf="parent"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintStart_toStartOf="parent"
                                         app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/txtExp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:fontFamily="@font/viga"
+                                        android:text="Os cátions do Grupo 1 são identificados pela adição do ácido clorídrico diluído, já que a Ag+, Pb2+ e Hg22+ formam precipitado ao entrar em contato com o íon cloreto, independentemente do valor de pH."
+                                        android:textColor="@color/gray"
+                                        android:textSize="16sp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/txtAzul" />
 
                                 </androidx.constraintlayout.widget.ConstraintLayout>
                             </androidx.cardview.widget.CardView>
@@ -254,15 +285,15 @@
                                 android:id="@+id/cardView8"
                                 android:layout_width="0dp"
                                 android:layout_height="145dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="16dp"
-                                android:layout_marginEnd="8dp"
-                                android:layout_marginBottom="8dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp"
                                 app:cardCornerRadius="15dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/textView6">
+                                app:layout_constraintTop_toBottomOf="@+id/cardView9">
 
                                 <androidx.constraintlayout.widget.ConstraintLayout
                                     android:layout_width="match_parent"
@@ -278,27 +309,51 @@
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintStart_toStartOf="parent"
                                         app:layout_constraintTop_toTopOf="parent" />
+
                                 </androidx.constraintlayout.widget.ConstraintLayout>
                             </androidx.cardview.widget.CardView>
-
-                            <TextView
-                                android:id="@+id/textView6"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginEnd="16dp"
-                                android:fontFamily="@font/viga"
-                                android:text="Os cátions do Grupo I são identificados pela adição do ácido clorídrico diluído, já que a Ag+, Pb2+ e Hg22+ formam precipitado ao entrar em contato com o íon cloreto, independentemente do valor de pH."
-                                android:textColor="@color/white"
-                                android:textSize="16sp"
-                                app:layout_constraintEnd_toStartOf="@+id/guideline11"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/cardView9" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnProx"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnSim"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnNao"
+                app:layout_constraintTop_toBottomOf="@+id/cardView14"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_btnprox">
+
+                    <TextView
+                        android:id="@+id/txtProx"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:fontFamily="@font/luckiest_guy"
+                        android:gravity="center"
+                        android:text="PRÓXIMO"
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
@@ -310,11 +365,12 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
+                android:visibility="visible"
                 app:cardCornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/btnNao"
+                app:layout_constraintStart_toEndOf="@+id/btnProx"
                 app:layout_constraintTop_toBottomOf="@+id/cardView14">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -330,7 +386,7 @@
                         android:gravity="center"
                         android:text="SIM"
                         android:textColor="@color/white"
-                        android:textSize="25sp"
+                        android:textSize="30dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -344,11 +400,12 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
+                android:visibility="visible"
                 app:cardCornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="@+id/btnSim"
-                app:layout_constraintEnd_toStartOf="@+id/btnSim"
+                app:layout_constraintEnd_toStartOf="@+id/btnProx"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/btnSim">
 
@@ -365,7 +422,7 @@
                         android:gravity="center"
                         android:text="NÃO"
                         android:textColor="@color/white"
-                        android:textSize="25sp"
+                        android:textSize="30dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
