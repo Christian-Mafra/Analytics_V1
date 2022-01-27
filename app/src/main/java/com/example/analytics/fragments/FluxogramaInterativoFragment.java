@@ -30,6 +30,7 @@ public class FluxogramaInterativoFragment extends Fragment {
         btnSim = view.findViewById(R.id.btnSim);
         btnNao = view.findViewById(R.id.btnNao);
         btnPro = view.findViewById(R.id.btnProx);
+        btnVol = view.findViewById(R.id.btnVol);
 
         //Text
         txtAzul = view.findViewById(R.id.txtAzul);
@@ -48,15 +49,16 @@ public class FluxogramaInterativoFragment extends Fragment {
         img = view.findViewById(R.id.imageView7);
         imageButton4 = view.findViewById(R.id.imageButton4);
     }
-    private String[] procedimentos;
     private ConstraintLayout constraintLayoutFora, constraintLayoutdentro;
-    private CardView btnSim, btnNao, btnPro;
+    private CardView btnSim, btnNao, btnPro, btnVol;
     private TextView txtPasso, txtAzul,txtExp, txtAmarelo;
     private View divider1,divider2,divider3,divider4,divider5;
     private ImageView img;
     private ImageButton imageButton4;
     int i =1;
     private Fluxograma cloretosInsoluvris;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,56 +70,115 @@ public class FluxogramaInterativoFragment extends Fragment {
         txtPasso.setText(cloretosInsoluvris.getPasso(1));
         txtAzul.setText(cloretosInsoluvris.getTxtAzul(1));
         txtExp.setText(cloretosInsoluvris.getExp(1));
+        txtAmarelo.setText(cloretosInsoluvris.getTxtAmarelo(1));
         img.setImageResource(cloretosInsoluvris.getImg(1));
-        i=2;
 
         btnSim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==2){
+                if(i==1){
                     trocarCartão(2);
                     txtPasso.setText(cloretosInsoluvris.getPasso(2));
                     txtAzul.setText(cloretosInsoluvris.getTxtAzul(2));
                     txtExp.setText(cloretosInsoluvris.getExp(2));
                     img.setImageResource(cloretosInsoluvris.getImg(2));
-                    i=3;
+                    i=2;
                 }else{
-                    if(i==2){
-                        //trocarCartão(1);
-                        txtPasso.setText("Passo 3");
-                        txtAzul.setText("No sobrenadante, goteje K2CrO4");
-                        txtAmarelo.setText("Formou precipitado amarelo?");
-                        i=3;
+                    if(i==3){
+                        trocarCartão(1);
+                        txtAmarelo.setText(cloretosInsoluvris.getTxtAmarelo(3));
+                        txtPasso.setText(cloretosInsoluvris.getPasso(4));
+                        txtAzul.setText(cloretosInsoluvris.getTxtAzul(4));
+                        txtExp.setText(cloretosInsoluvris.getExp(4));
+                        img.setImageResource(cloretosInsoluvris.getImg(4));
+                        i=4;
                     }else{
-                        if(i==4){
-                            txtPasso.setText(cloretosInsoluvris.getPasso(4));
-                            txtAzul.setText(cloretosInsoluvris.getTxtAzul(4));
-                            txtExp.setText(cloretosInsoluvris.getExp(4));
-                            img.setImageResource(cloretosInsoluvris.getImg(4));
-                            i=5;
+                        if(i==4) {
+                            trocarCartão(2);
+                            txtPasso.setText(cloretosInsoluvris.getPasso(5));
+                            txtAzul.setText(cloretosInsoluvris.getTxtAzul(5));
+                            txtExp.setText(cloretosInsoluvris.getExp(5));
+                            img.setImageResource(cloretosInsoluvris.getImg(5));
+                            i = 5;
                         }
                     }
                 }
             }
         });
 
-        btnPro.setOnClickListener(new View.OnClickListener() {
+        btnNao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==3){
+                if (i == 3) {
                     trocarCartão(1);
-                    txtPasso.setText(cloretosInsoluvris.getPasso(3));
-                    txtAzul.setText(cloretosInsoluvris.getTxtAzul(3));
                     txtAmarelo.setText(cloretosInsoluvris.getTxtAmarelo(3));
-                    txtExp.setText(cloretosInsoluvris.getExp(3));
-                    img.setImageResource(cloretosInsoluvris.getImg(3));
-                    i=4;
-                }else{
-                    if(i==i){
-
+                    txtPasso.setText(cloretosInsoluvris.getPasso(4));
+                    txtAzul.setText(cloretosInsoluvris.getTxtAzul(4));
+                    txtExp.setText(cloretosInsoluvris.getExp(4));
+                    img.setImageResource(cloretosInsoluvris.getImg(4));
+                    i = 4;
+                } else {
+                    if(i==4) {
+                        trocarCartão(2);
+                        txtPasso.setText(cloretosInsoluvris.getPasso(5));
+                        txtAzul.setText(cloretosInsoluvris.getTxtAzul(5));
+                        txtExp.setText(cloretosInsoluvris.getExp(5));
+                        img.setImageResource(cloretosInsoluvris.getImg(5));
+                        i = 5;
                     }
                 }
 
+            }
+        });
+
+        btnPro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==2){
+                    trocarCartão(1);
+                    txtPasso.setText(cloretosInsoluvris.getPasso(3));
+                    txtAzul.setText(cloretosInsoluvris.getTxtAzul(3));
+                    txtAmarelo.setText(cloretosInsoluvris.getTxtAmarelo(2));
+                    txtExp.setText(cloretosInsoluvris.getExp(3));
+                    img.setImageResource(cloretosInsoluvris.getImg(3));
+                    i=3;
+                }else{
+                    if(i==5){
+                        trocarCartão(1);
+                        txtPasso.setText(cloretosInsoluvris.getPasso(6));
+                        txtAzul.setText(cloretosInsoluvris.getTxtAzul(6));
+                        txtAmarelo.setText(cloretosInsoluvris.getTxtAmarelo(1));
+                        txtExp.setText(cloretosInsoluvris.getExp(6));
+                        img.setImageResource(cloretosInsoluvris.getImg(6));
+                        i=6;
+                    }
+                }
+
+            }
+        });
+
+        btnVol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(i==2){
+                    trocarCartão(1);
+                    txtPasso.setText(cloretosInsoluvris.getPasso(1));
+                    txtAzul.setText(cloretosInsoluvris.getTxtAzul(1));
+                    txtAmarelo.setText(cloretosInsoluvris.getTxtAmarelo(1));
+                    txtExp.setText(cloretosInsoluvris.getExp(1));
+                    img.setImageResource(cloretosInsoluvris.getImg(1));
+                    i=1;
+                }else{
+                    if(i==5){
+                        trocarCartão(1);
+                        txtPasso.setText(cloretosInsoluvris.getPasso(4));
+                        txtAzul.setText(cloretosInsoluvris.getTxtAzul(4));
+                        txtAmarelo.setText(cloretosInsoluvris.getTxtAmarelo(3));
+                        txtExp.setText(cloretosInsoluvris.getExp(4));
+                        img.setImageResource(cloretosInsoluvris.getImg(4));
+                        i=4;
+                    }
+                }
             }
         });
 
@@ -134,9 +195,9 @@ public class FluxogramaInterativoFragment extends Fragment {
             imageButton4.setVisibility(View.VISIBLE);
 
             btnPro.setVisibility(View.GONE);
+            btnVol.setVisibility(View.GONE);
             btnNao.setVisibility(View.VISIBLE);
             btnSim.setVisibility(View.VISIBLE);
-
             //constraintLayoutFora.setBackgroundResource(R.drawable.background_card_azul);
             //constraintLayoutdentro.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.azul_escuro));
             //constraintLayoutFora.setDrawingCacheBackgroundColor(R.drawable.background_card_azul);
@@ -151,9 +212,9 @@ public class FluxogramaInterativoFragment extends Fragment {
             imageButton4.setVisibility(View.GONE);
 
             btnPro.setVisibility(View.VISIBLE);
+            btnVol.setVisibility(View.VISIBLE);
             btnNao.setVisibility(View.GONE);
             btnSim.setVisibility(View.GONE);
-
             //constraintLayoutFora.setBackgroundResource(R.drawable.background_btnprox);
             //constraintLayoutFora.setDrawingCacheBackgroundColor(R.drawable.background_btnprox);
             //constraintLayoutdentro.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.laranja_escuro));

@@ -52,8 +52,7 @@ public class LoginFragment extends Fragment {
                         usuario = new UsuarioModel();
                         usuario.setEmail(email);
                         usuario.setSenha(senha);
-                        startActivity(new Intent(getContext(),PrincipalActivity.class));
-                        //validarLogin(usuario);
+                        validarLogin(usuario);
                     }else{
                         Toast.makeText(getContext(), "Informe uma senha", Toast.LENGTH_SHORT).show();
                     }

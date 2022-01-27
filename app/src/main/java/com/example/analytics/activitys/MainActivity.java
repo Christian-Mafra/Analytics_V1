@@ -44,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.buttonLogin);
         buttonCadastro = findViewById(R.id.buttonCadastro);
 
+        Intent intent = new Intent(getApplicationContext(), FragmentsActivity.class);
+        intent.putExtra("fragments",6);
+        startActivity(intent);
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
