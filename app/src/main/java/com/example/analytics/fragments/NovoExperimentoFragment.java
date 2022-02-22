@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.analytics.R;
 import com.example.analytics.activitys.FragmentsActivity;
@@ -23,11 +25,18 @@ import java.util.List;
 
 
 public class NovoExperimentoFragment extends Fragment {
+    private void iniciar(View view){
+        img = view.findViewById(R.id.imageView2);
+        txtTitulo = view.findViewById(R.id.textView32);
+
+    };
     private RecyclerView recyclerViewAnaliseCations, recyclerViewAnaliseAnions;
     private List<GruposCations> gruposCations = new ArrayList<>();
     private List<GruposAnions> gruposAnions = new ArrayList<>();
     private AdapterGruposCations.RecyclerViewClickListner listner;
     private AdapterGruposAnions.RecyclerViewClickListner listner2;
+    private ImageView img;
+    private TextView txtTitulo;
 
 
     @Override
@@ -35,6 +44,10 @@ public class NovoExperimentoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_novo_experimento, container, false);
+        iniciar(view);
+
+        //img.setImageResource(getIntent().getIntExtra("foto",0));
+        //txtTitulo.setText(getIntent().getStringExtra("nome"));
 
 
         recyclerViewAnaliseCations = view.findViewById(R.id.recyclerViewAnaliseCations);

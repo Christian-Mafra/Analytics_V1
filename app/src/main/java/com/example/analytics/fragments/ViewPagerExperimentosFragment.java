@@ -99,24 +99,6 @@ public class ViewPagerExperimentosFragment extends Fragment {
             }
         });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         return view;
     }
 

@@ -9,6 +9,7 @@ public class Fluxograma {
     private String txtAmarelo;
     private String resultado;
     private int img;
+    private String nome;
 
 
             private String resultadoG1[] = {
@@ -30,6 +31,14 @@ public class Fluxograma {
         public String getPasso(int i) {
             passo = "Passo "+i;
             return passo;
+        }
+        public String getNome(int i) {
+            if(i==1){nome="Cloretos insolúveis";}
+            if(i==2){nome="Sulfetos insolúveis em meio ácido";};
+            if(i==3){nome="Sulfetos insolúveis em meio básico";}
+            if(i==4){nome="Carbonatos insolúveis";}
+            if(i==5){nome="Cátions solúveis";}
+            return nome;
         }
 
         public String getTxtAzul(int i) {
