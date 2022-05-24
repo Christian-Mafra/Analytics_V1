@@ -220,7 +220,7 @@
                         android:id="@+id/cardViewCartoes"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         app:cardBackgroundColor="#16372e"
                         app:cardElevation="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -353,77 +353,60 @@
                                             android:layout_height="match_parent"
                                             android:background="@color/azul_escuro">
 
-                                            <TextView
-                                                android:id="@+id/txtAzul"
-                                                android:layout_width="0dp"
-                                                android:layout_height="wrap_content"
-                                                android:layout_marginStart="8dp"
-                                                android:layout_marginTop="8dp"
-                                                android:layout_marginEnd="8dp"
-                                                android:fontFamily="@font/viga"
-                                                android:gravity="center"
-                                                android:text="Adicione 2mL de HCl 3 molar"
-                                                android:textAllCaps="false"
-                                                android:textColor="#FFFFFF"
-                                                android:textSize="22sp"
-                                                app:layout_constraintEnd_toEndOf="parent"
-                                                app:layout_constraintStart_toStartOf="parent"
-                                                app:layout_constraintTop_toTopOf="parent" />
-
-                                            <androidx.cardview.widget.CardView
+                                            <ScrollView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="0dp"
-                                                android:layout_marginStart="8dp"
-                                                android:layout_marginTop="8dp"
-                                                android:layout_marginEnd="8dp"
-                                                android:layout_marginBottom="8dp"
-                                                app:cardElevation="0dp"
+                                                android:background="@color/azul_escuro"
                                                 app:layout_constraintBottom_toBottomOf="parent"
                                                 app:layout_constraintEnd_toEndOf="parent"
                                                 app:layout_constraintStart_toStartOf="parent"
-                                                app:layout_constraintTop_toBottomOf="@+id/txtAzul">
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                tools:ignore="SpeakableTextPresentCheck">
 
                                                 <androidx.constraintlayout.widget.ConstraintLayout
                                                     android:layout_width="match_parent"
-                                                    android:layout_height="match_parent">
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginBottom="102dp"
+                                                    app:layout_constraintBottom_toBottomOf="parent"
+                                                    app:layout_constraintEnd_toEndOf="parent"
+                                                    app:layout_constraintStart_toStartOf="parent"
+                                                    app:layout_constraintTop_toTopOf="parent">
 
-                                                    <ScrollView
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="0dp"
-                                                        android:background="@color/azul_escuro"
-                                                        app:layout_constraintBottom_toBottomOf="parent"
-                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                    <TextView
+                                                        android:id="@+id/txtAzul"
+                                                        android:layout_width="0dp"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="8dp"
+                                                        android:layout_marginTop="8dp"
+                                                        android:layout_marginEnd="8dp"
+                                                        android:fontFamily="@font/viga"
+                                                        android:gravity="center"
+                                                        android:text="Adicione 2mL de HCl 3 molar"
+                                                        android:textAlignment="viewStart"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="#FFFFFF"
+                                                        android:textSize="18sp"
+                                                        app:layout_constraintEnd_toEndOf="@+id/txtExp"
                                                         app:layout_constraintStart_toStartOf="parent"
-                                                        app:layout_constraintTop_toTopOf="parent"
-                                                        tools:ignore="SpeakableTextPresentCheck">
+                                                        app:layout_constraintTop_toTopOf="parent" />
 
-                                                        <androidx.constraintlayout.widget.ConstraintLayout
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="match_parent"
-                                                            android:layout_marginBottom="102dp"
-                                                            app:layout_constraintBottom_toBottomOf="parent"
-                                                            app:layout_constraintEnd_toEndOf="parent"
-                                                            app:layout_constraintStart_toStartOf="parent"
-                                                            app:layout_constraintTop_toTopOf="parent">
-
-                                                            <TextView
-                                                                android:id="@+id/txtExp"
-                                                                android:layout_width="match_parent"
-                                                                android:layout_height="wrap_content"
-                                                                android:fontFamily="@font/viga"
-                                                                android:text="Os cátions do Grupo 1 são identificados pela adição do ácido clorídrico diluído, já que a Ag+, Pb2+ e Hg22+ formam precipitado ao entrar em contato com o íon cloreto, independentemente do valor de pH."
-                                                                android:textColor="@color/gray"
-                                                                android:textSize="16sp"
-                                                                app:layout_constraintEnd_toEndOf="parent"
-                                                                app:layout_constraintHorizontal_bias="1.0"
-                                                                app:layout_constraintStart_toStartOf="parent"
-                                                                app:layout_constraintTop_toTopOf="parent" />
-                                                        </androidx.constraintlayout.widget.ConstraintLayout>
-                                                    </ScrollView>
-
+                                                    <TextView
+                                                        android:id="@+id/txtExp"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="8dp"
+                                                        android:layout_marginTop="8dp"
+                                                        android:layout_marginEnd="8dp"
+                                                        android:fontFamily="@font/viga"
+                                                        android:text="Os cátions do Grupo 1 são identificados pela adição do ácido clorídrico diluído, já que a Ag+, Pb2+ e Hg22+ formam precipitado ao entrar em contato com o íon cloreto, independentemente do valor de pH."
+                                                        android:textColor="@color/gray"
+                                                        android:textSize="14sp"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintHorizontal_bias="1.0"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toBottomOf="@+id/txtAzul" />
                                                 </androidx.constraintlayout.widget.ConstraintLayout>
-
-                                            </androidx.cardview.widget.CardView>
+                                            </ScrollView>
 
                                         </androidx.constraintlayout.widget.ConstraintLayout>
                                     </androidx.cardview.widget.CardView>
@@ -481,15 +464,15 @@
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="16dp"
                                 android:backgroundTint="#FF9800"
+                                android:drawableBottom="@drawable/ic_baseline_device_hub_24"
                                 android:fontFamily="@font/viga"
-                                android:text="X"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 app:cornerRadius="30dp"
                                 app:layout_constraintBottom_toTopOf="@+id/cardAzul"
                                 app:layout_constraintEnd_toEndOf="@+id/cardAzul"
                                 app:layout_constraintTop_toTopOf="@+id/cardAzul"
-                                tools:ignore="TouchTargetSizeCheck" />
+                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/panAmarelo"
@@ -544,13 +527,13 @@
                                             <TextView
                                                 android:id="@+id/txtAmarelo"
                                                 android:layout_width="0dp"
-                                                android:layout_height="0dp"
+                                                android:layout_height="wrap_content"
                                                 android:fontFamily="@font/viga"
                                                 android:gravity="center"
                                                 android:text="Formou um precipitado branco?"
                                                 android:textAllCaps="false"
                                                 android:textColor="@color/black"
-                                                android:textSize="20sp"
+                                                android:textSize="14sp"
                                                 android:textStyle="bold"
                                                 app:layout_constraintBottom_toBottomOf="parent"
                                                 app:layout_constraintEnd_toEndOf="parent"
@@ -564,26 +547,11 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:id="@+id/imageView14"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="8dp"
-                        android:elevation="5dp"
-                        android:src="@drawable/tubos"
-                        app:layout_constraintStart_toStartOf="@+id/cardView13"
-                        app:layout_constraintTop_toTopOf="@+id/cardView13"
-                        app:tint="#24FF54" />
-
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardView13"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="32dp"
-                        android:layout_marginEnd="16dp"
                         app:cardBackgroundColor="#27583e"
-                        app:cardCornerRadius="12dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
@@ -600,7 +568,7 @@
                             android:gravity="center"
                             android:text="Cloretos Insolúveis"
                             android:textColor="@color/white"
-                            android:textSize="25sp" />
+                            android:textSize="18sp" />
                     </androidx.cardview.widget.CardView>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

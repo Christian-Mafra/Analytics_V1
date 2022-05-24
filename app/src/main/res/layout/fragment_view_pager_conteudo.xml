@@ -80,7 +80,7 @@
                         android:text="Short book"
                         android:textColor="@color/white"
                         android:textColorHint="@color/cor_tema_claro"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         app:layout_constraintEnd_toStartOf="@+id/btnVamosLa"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/btnVamosLa" />
@@ -94,7 +94,7 @@
                         android:text="transmita"
                         android:textColor="@color/white"
                         android:textColorHint="@color/cor_tema_claro"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/btnVamosLa"
                         app:layout_constraintTop_toTopOf="@+id/btnVamosLa" />
@@ -112,12 +112,13 @@
                 android:fontFamily="@font/copse"
                 android:text="Novidades no Analytics"
                 android:textColor="@color/white"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerNovidades"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -128,7 +129,7 @@
                 android:fontFamily="@font/copse"
                 android:text="Recomendação especial"
                 android:textColor="@color/white"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerRecomendacao"
@@ -146,43 +147,9 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-3940256099942544/6300978111">
+                app:adUnitId="ca-app-pub-7571180593147491/7561773209">
 
             </com.google.android.gms.ads.AdView>
-
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/copse"
-                android:text="Continue estudando"
-                android:textColor="@color/white"
-                android:textSize="25sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerContinue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/copse"
-                android:text="Cloretos insolúveis"
-                android:textColor="@color/white"
-                android:textSize="25sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerCloretos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" />
 
         </LinearLayout>
     </ScrollView>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.analytics">
+    package="com.boss.analytics">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Analytics">
         <activity
-            android:name=".activitys.ViewPagerExperimentosFragment"
+            android:name=".activitys.NovoExperimentoActivity"
             android:exported="true" />
         <activity
             android:name=".activitys.ShortBookActivity"

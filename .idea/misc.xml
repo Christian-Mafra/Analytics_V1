@@ -15,48 +15,55 @@
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/button_item_background.xml" value="0.1125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/cor_tema_transparente.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/ic_baseline_add_a_photo_24.xml" value="0.2203125" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/ic_baseline_device_hub_24.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/ic_baseline_library_books_24.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2203125" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/preto_transparente.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/preto_transparente_background.xml" value="0.1925925925925926" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/tema_claro_cackground.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/texte.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/drawable/transparente_preto.xml" value="0.2203125" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/font/viga.xml" value="0.234375" />
-        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_cadastro.xml" value="0.25" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_cadastro.xml" value="0.33" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_download.xml" value="0.25" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_fragments.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_main2.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_novo_experimento.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_pdfactivity.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_principal.xml" value="0.1" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_principal.xml" value="0.25" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_short_book.xml" value="0.25" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_test.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_view_pager_experimentos_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_visualizacao.xml" value="0.22" />
-        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_visualizacao1.xml" value="0.22" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/activity_visualizacao1.xml" value="0.2" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/adapter_cartaz_vertical.xml" value="0.33" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/adapter_cartaz_vertical_mais_conteudo.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/adapter_experimentos.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/adapter_fluxograma_analise.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/adapter_grupos_anions.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/adapter_grupos_cations.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/adapter_quem_somos.xml" value="0.1" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/adapter_quem_somos.xml" value="0.33" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/adapter_shortbook.xml" value="0.33" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/adapter_visualizacao_conteudo.xml" value="0.25" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_cadastro.xml" value="0.33" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_detalhes.xml" value="0.2" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_em_breve.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_fluxograma_interativo.xml" value="0.33" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_login_ou_cadastro.xml" value="0.1" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_novo_experimento.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_perfil.xml" value="0.2" />
-        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_quem_somos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_perfil.xml" value="0.33" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_quem_somos.xml" value="0.33" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_testes.xml" value="0.1" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_view_pager_conteudo.xml" value="0.28972653362897266" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_view_pager_experimentos.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_visu_conteudo.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_visu_detalhes.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_visu_conteudo.xml" value="0.67" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_visu_detalhes.xml" value="0.4083333333333333" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_visualizacao_conteudos_semelhantesragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/fragment_visualizacao_detalhes.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/layout/preto_transparente.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/menu/button_menu.xml" value="0.1" />
         <entry key="..\:/Users/bj_ag/AndroidStudioProjects/Analytics/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1953125" />
